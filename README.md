@@ -34,3 +34,21 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+https://www.youtube.com/watch?v=Ahwoks_dawU&t=2245s
+
+Packages Used
+1. ShadCN UI
+    1.1 Button
+    1.2 Input
+    1.3 Sheet
+2. Clerk
+2. Copied Resources from Adrian Github Repository
+    2.1 global.css
+    2.2 tailwind.config.ts
+    2.3 Public Assets Folder
+    2.4 constants/index.ts
+    2.5 lib/database/models/user.model.ts
+    2.6 lib/database/models/transaction.model.ts
+    2.6 lib/actions/user.action.ts
+    2.7 lib/utils.ts
+    2.8 types/index.d.ts
