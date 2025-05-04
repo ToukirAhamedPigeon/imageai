@@ -5,7 +5,8 @@ import {createUser, deleteUser, updateUser} from '@/lib/actions/user.action'
 export async function POST(req: NextRequest) {
   try {
     const evt = await verifyWebhook(req)
-
+    console.log('Webhook received')
+    console.log('Event:', evt)
     // Do something with payload
     // For this guide, log payload to console
     const { id } = evt.data
