@@ -41,7 +41,8 @@ Packages Used
     1.1 Button
     1.2 Input
     1.3 Sheet
-2. Clerk
+    1.4 React Hook Form with Zod Validation from ShadCn
+    1.5 Toast
 2. Copied Resources from Adrian Github Repository
     2.1 global.css
     2.2 tailwind.config.ts
@@ -52,3 +53,6 @@ Packages Used
     2.6 lib/actions/user.action.ts
     2.7 lib/utils.ts
     2.8 types/index.d.ts
+    2.9 components/shared/CustomField.tsx
+3. Clerk
+4. Cloudinary

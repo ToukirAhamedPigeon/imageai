@@ -14,15 +14,17 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Button } from '../ui/button'
+import { useState } from 'react'
 const MobileNav = () => {
     const pathname = usePathname();
+    const [open, setOpen] = useState(false);
   return (
     <header className='header'>
       <LogoMd/>
       <nav className='flex gap-2'>
         <SignedIn>
             <UserButton/>
-            <Sheet>
+            <Sheet open={open} onOpenChange={setOpen}>
                 <SheetTrigger>
                     <Image src='/assets/icons/menu.svg' alt='menu' width={32} height={32} className='cursor-pointer' />
                 </SheetTrigger>
@@ -36,7 +38,7 @@ const MobileNav = () => {
                     return(
                         <li key={link.route} className=
                         {`${isActive && 'gradient-text'} hover:gradient-text p-18 flex whitespace-nowrap text-dark-700`}>
-                            <Link href={link.route} className='sidebar-link cursor-pointer'>
+                            <Link href={link.route} className='sidebar-link cursor-pointer' onClick={() => setOpen(false)}>
                                 <Image src={link.icon} alt={link.label} width={28} height={28}/>
                                 {link.label}
                             </Link>
