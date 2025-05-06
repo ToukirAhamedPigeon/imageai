@@ -25,7 +25,7 @@ const TransformedImage = ({image, type, title, isTransforming, setIsTransforming
             <CldImage
                 width={getImageSize(type,image,"width")} 
                 height={getImageSize(type,image,"height")} 
-                alt={image.title}
+                alt={title}
                 sizes={"(max-width:767px) 100vw, 50vw"}
                 placeholder={dataUrl as PlaceholderValue}
                 src={image?.publicId}
@@ -42,7 +42,7 @@ const TransformedImage = ({image, type, title, isTransforming, setIsTransforming
             />
             {isTransforming && (
                 <div className="transforming-loader">
-                    <Image src="/assets/icons/loader.svg" alt="Transforming..." width={50} height={50} />
+                    <Image src="/assets/icons/spinner.svg" alt="Transforming..." width={50} height={50} />
                 </div>
             )}
         </div>

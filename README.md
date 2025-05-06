@@ -43,6 +43,8 @@ Packages Used
     1.3 Sheet
     1.4 React Hook Form with Zod Validation from ShadCn
     1.5 Toast
+    1.6 Alert Dialog
+    1.7 Pagination
 2. Copied Resources from Adrian Github Repository
     2.1 global.css
     2.2 tailwind.config.ts
@@ -54,5 +56,8 @@ Packages Used
     2.7 lib/utils.ts
     2.8 types/index.d.ts
     2.9 components/shared/CustomField.tsx
+    2.10 components/shared/InsufficientCreditsModal.tsx
+    2.11 components/shared/Collection.tsx
+    2.12 components/shared/Search.tsx
 3. Clerk
 4. Cloudinary
