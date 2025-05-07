@@ -59,5 +59,12 @@ Packages Used
     2.10 components/shared/InsufficientCreditsModal.tsx
     2.11 components/shared/Collection.tsx
     2.12 components/shared/Search.tsx
+    2.13 transformations/[id]/page.tsx
+    2.14 transformations/update/[id]/page.tsx
+    2.15 components/shared/DeleteConfirmation.tsx
+    2.16 api/webhooks/stripe/route.ts
+    2.17 Credits/Page.tsx
+    2.18 components/shared/Checkout.tsx
+    2.19 profile/page.tsx
 3. Clerk
 4. Cloudinary

@@ -1,12 +1,15 @@
 import { Collection } from "@/components/shared/Collection";
 import { navLinks } from "@/constants";
+import { getAllImages } from "@/lib/actions/image.action";
 import Image from "next/image";
 import Link from "next/link";
 
-export default async function Home({ params }: {params: Promise<{ page: string, query: string }>}) {
-  const searchParams = await params;
-  const page = Number(searchParams?.page) || 1;
-  const searchQuery = (searchParams?.query) || '';
+export default async function Home({ searchParams }: {searchParams: Promise<{ page: Number, query: string }>}) {
+  const pageParams = await searchParams;
+  const page=Number(pageParams?.page) || 1
+  const query=pageParams?.query || ''
+  console.log("Home page",page, query);
+  const images = await getAllImages({page, searchQuery:query});
   return (
     < >
       <section className="home-container w-full rounded-2xl py-8 bg-gradient-to-r from-purple-500 to-purple-600 text-transparent">
@@ -25,7 +28,7 @@ export default async function Home({ params }: {params: Promise<{ page: string, 
         </ul>
       </section>
       <section className="mt-12">
-        <Collection images={[]} totalPages={1} page={1}/>
+        <Collection hasSearch={true} images={images?.data} totalPages={images?.totalPage} page={Number(page)}/>
       </section>
     </>
   );

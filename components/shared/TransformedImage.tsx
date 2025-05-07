@@ -1,13 +1,22 @@
+'use client';
 import React from 'react'
 import { Button } from '../ui/button'
 import Image from 'next/image'
 import { PlaceholderValue } from 'next/dist/shared/lib/get-img-props'
-import { dataUrl, debounce } from '@/lib/utils'
-import { CldImage } from 'next-cloudinary'
+import { dataUrl, debounce, download } from '@/lib/utils'
+import { CldImage, getCldImageUrl } from 'next-cloudinary'
 import { getImageSize } from '@/lib/utils'
 
 const TransformedImage = ({image, type, title, isTransforming, setIsTransforming, transformationConfig, hasDownload = false}:TransformedImageProps) => {
-    const downloadHandler = () => {}
+    const downloadHandler = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+      e.preventDefault();
+      download(getCldImageUrl({
+        width: image?.width,
+        height: image?.height,
+        src:image?.publicId,
+        ...transformationConfig
+      }),title)
+    }
   return (
     <div className='flex flex-col gap-4'>
       <div className="flex-between">
@@ -36,13 +45,14 @@ const TransformedImage = ({image, type, title, isTransforming, setIsTransforming
                 onError={()=>{
                     debounce(()=>{
                         setIsTransforming && setIsTransforming(false)
-                    }, 8000)
+                    }, 8000)()
                 }}
                 {...transformationConfig}
             />
             {isTransforming && (
                 <div className="transforming-loader">
                     <Image src="/assets/icons/spinner.svg" alt="Transforming..." width={50} height={50} />
+                    <p>Please wait...</p>
                 </div>
             )}
         </div>

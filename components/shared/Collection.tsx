@@ -23,7 +23,7 @@ export const Collection = ({
   hasSearch = false,
   images,
   totalPages = 1,
-  page,
+  page=1,
 }: {
   images: IImage[];
   totalPages?: number;
@@ -32,6 +32,7 @@ export const Collection = ({
 }) => {
   const router = useRouter();
   const searchParams = useSearchParams();
+  console.log("Collection page",page);
 
   // PAGINATION HANDLER
   const onPageChange = (action: string) => {
@@ -42,6 +43,8 @@ export const Collection = ({
       key: "page",
       value: pageValue,
     });
+
+    console.log("New URL",newUrl);
 
     router.push(newUrl, { scroll: false });
   };
