@@ -13,12 +13,6 @@ import {
   } from "@/components/ui/select"  
 import {
   Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import {defaultValues, transformationTypes, aspectRatioOptions, creditFee} from '@/constants'
@@ -70,12 +64,12 @@ const TransformationForm = ({data=null, action, type, userId, creditBalance, con
             setNewTransformation((prevState:any)=>({
                 ...prevState,
               [type]:{
-                ...prevState[type],
+                ...prevState?.[type],
                 [fieldName === 'prompt' ? 'prompt' : 'to']: value,
               }
             }))
-            return onChangeField(value);
-        }, 1000)
+        }, 1000)()
+        return onChangeField(value);
     }
 
     const onTransformHandler = async() => {
@@ -171,7 +165,7 @@ const TransformationForm = ({data=null, action, type, userId, creditBalance, con
             formLabel="Aspect Ratio"
             className="w-full"
             render={({field})=>(
-                <Select onValueChange={(value)=>onSelectFieldHandler(value, field.onChange)}>
+                <Select onValueChange={(value)=>onSelectFieldHandler(value, field.onChange)} value={field.value}>
                     <SelectTrigger className="select-field">
                         <SelectValue placeholder="Select Size" />
                     </SelectTrigger>

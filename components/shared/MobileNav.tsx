@@ -20,7 +20,7 @@ const MobileNav = () => {
     const [open, setOpen] = useState(false);
   return (
     <header className='header'>
-      <LogoMd/>
+      <Link href='/'><LogoMd/></Link>
       <nav className='flex gap-2'>
         <SignedIn>
             <UserButton/>

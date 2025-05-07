@@ -51,7 +51,7 @@ const MediaUploader = ({
     uploadPreset='imageai'
     options={{
         resourceType: 'image',
-        multiple: false,
+        multiple: false
     }}
     onSuccess={onUploadSuccessHandler}
     onError={onUploadErrorHandler}

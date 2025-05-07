@@ -59,5 +59,37 @@ Packages Used
     2.10 components/shared/InsufficientCreditsModal.tsx
     2.11 components/shared/Collection.tsx
     2.12 components/shared/Search.tsx
+    2.13 transformations/[id]/page.tsx
+    2.14 transformations/update/[id]/page.tsx
+    2.15 components/shared/DeleteConfirmation.tsx
+    2.16 api/webhooks/stripe/route.ts
+    2.17 Credits/Page.tsx
+    2.18 components/shared/Checkout.tsx
+    2.19 profile/page.tsx
 3. Clerk
 4. Cloudinary
+
+
+Project Steps
+1. Next Project Setup with Tailwind and ShadCN
+2. Clerk Authentication Setup\
+3. Root Layout Create
+4. Clerk SignIn and SignOut Logic Implement
+5. Mongo DB with Mongoose Set Up
+6. Clerk Webhook on User Create in Clerk User info will insert in MongoDB
+7. React Hook Form with Zod Validation
+8. Cloudinary Integration with AI Addons
+9. Generative Fill Implement
+10. Background Remove
+11. Object Remove
+12. Object ReColor
+13. Image Restore
+14. Home Page Design with Hero Setion
+15. Image fetch for Homepage with Search and Pagination Logic
+16. Buy Credit Page
+17. Stripe Integration
+18. Stripe Web hook on checkout completed
+19. User Profile Page fetch Credit and User Image in Profile Page
+20. Image Detail page with Update and Delete Button
+21. Image Update Form (Autofill Columns with Previous Data)
+22. Image Delete Confirmation Modal and Delete Image
