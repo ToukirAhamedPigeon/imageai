@@ -1,7 +1,7 @@
 import type { NextConfig } from 'next'
 import withPWA from 'next-pwa'
 
-const nextConfig: NextConfig = {
+const baseConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -11,6 +11,7 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
+        protocol: 'https',
         hostname: 'res.cloudinary.com',
       },
     ],
@@ -18,8 +19,9 @@ const nextConfig: NextConfig = {
 }
 
 export default withPWA({
-  ...nextConfig,
-  dest: 'public',
-  register: true,
-  skipWaiting: true,
+  ...baseConfig,
+    dest: 'public', // required
+    register: true,
+    skipWaiting: true,
+    disable: process.env.NODE_ENV === 'development',
 })

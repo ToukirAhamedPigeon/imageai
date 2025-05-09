@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import {  IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import Head from "next/head";
 const ibmPlexSans = IBM_Plex_Sans({
   variable: "--font-ibm-plex-sans",
   subsets: ["latin"],
@@ -26,6 +27,11 @@ export default function RootLayout({
   return (
     
     <html lang="en">
+      <Head>
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#000000" />
+        <link rel="apple-touch-icon" href="/logo-icon.png" />
+      </Head>
       <ClerkProvider appearance={{
         variables: {
           colorPrimary: "#624cf5",
