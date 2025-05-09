@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.png",
   },
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({
@@ -27,11 +28,14 @@ export default function RootLayout({
   return (
     
     <html lang="en">
-      <Head>
-        <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#000000" />
+      <head>
+        <link rel="icon" href="/logo.png" type="image/png" />
+        
+        {/* Optional: Other device icons */}
         <link rel="apple-touch-icon" href="/logo-icon.png" />
-      </Head>
+        <link rel="icon" sizes="192x192" href="/logo-icon.png" />
+        <link rel="icon" sizes="16x16 32x32 48x48" href="/logo-icon.png" />
+      </head>
       <ClerkProvider appearance={{
         variables: {
           colorPrimary: "#624cf5",
