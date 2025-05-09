@@ -32,7 +32,11 @@ export const Collection = ({
 }) => {
   const router = useRouter();
   const searchParams = useSearchParams();
+<<<<<<< HEAD
   // console.log("Collection page",page);
+=======
+  console.log("Collection page",page);
+>>>>>>> 2f25b829cdf815903b56c5052cc7ff7337b4daff
 
   // PAGINATION HANDLER
   const onPageChange = (action: string) => {

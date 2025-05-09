@@ -61,5 +61,4 @@ const Profile = async ( { searchParams }:  {searchParams: Promise<{page:string}>
     </>
   );
 };
-
 export default Profile;
