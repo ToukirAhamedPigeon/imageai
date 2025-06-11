@@ -4,7 +4,7 @@ import React from 'react'
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <main className="root">
+    <main className="root !bg-slate-200">
       <Sidebar />
       <MobileNav/>
         <div className="root-container">

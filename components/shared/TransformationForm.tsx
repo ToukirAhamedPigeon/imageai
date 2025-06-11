@@ -166,7 +166,7 @@ const TransformationForm = ({data=null, action, type, userId, creditBalance, con
             className="w-full"
             render={({field})=>(
                 <Select onValueChange={(value)=>onSelectFieldHandler(value, field.onChange)} value={field.value}>
-                    <SelectTrigger className="select-field">
+                    <SelectTrigger className="select-field bg-slate-100">
                         <SelectValue placeholder="Select Size" />
                     </SelectTrigger>
                     <SelectContent>

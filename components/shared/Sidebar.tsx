@@ -11,7 +11,7 @@ import { Button } from '../ui/button'
 const Sidebar = () => {
     const pathname = usePathname();
   return (
-    <aside className='sidebar'>
+    <aside className='sidebar !bg-slate-100'>
       <div className="flex w-full h-full flex-col gap-4">
         <Link href='/' className="sidebar-logo">
             <LogoBig/>
